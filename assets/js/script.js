@@ -123,6 +123,10 @@ submitBtn.addEventListener("click", submitScore);
 goBackBtn.addEventListener("click", function () {
     highscoreEl.classList.add("hide");
     introEl.classList.remove("hide");
+    index = 0;  // Reset the index to the beginning of the questionData
+    timeRemaining = questionData.length * 15; // Reset the timer based on the number of questions
+    clearInterval(setIntervalId); // Stop the current timer
+    timerEl.textContent = timeRemaining; // Update the timer display
 });
 clearHighscoreBtn.addEventListener("click", clearHighScores);
 
